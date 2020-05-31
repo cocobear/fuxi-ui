@@ -44,7 +44,7 @@
             </div>
         </div>
         <v-row justify="center" v-if="data.length === 0" class="grey--text mb-12 mt-12 ml-n12">
-            <h2>No available data</h2>
+            <h2>没有数据</h2>
             <br>
         </v-row>
     </div>

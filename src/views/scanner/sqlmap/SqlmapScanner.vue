@@ -48,7 +48,7 @@
                         @page-count="pageCount = $event"
                         :loading="spinShow"
                         item-key="tid"
-                        loading-text="Loading... Please wait"
+                        loading-text="加载中...请稍等"
                         :search="search"
                         show-select
                         v-model="selected"
@@ -152,7 +152,7 @@
                 </v-data-table>
             </v-col>
             <v-row v-if="items.length === 0" justify="center" class="grey--text mb-6">
-                <h2>No available data</h2>
+                <h2>没有数据</h2>
                 <br>
             </v-row>
 
@@ -175,9 +175,9 @@
                 <v-card-text>
                     <v-col>
                         <v-text-field
-                                label="Task Name"
+                                label="任务名称"
                                 v-model="newScanData.name"
-                                :rules="[v => !!v || 'Task name is required']"
+                                :rules="[v => !!v || '任务名称为空']"
                                 persistent-hint
                                 required
                         ></v-text-field>
@@ -205,16 +205,16 @@
                                 v-if="newScanData.method === 'GET'"
                                 outlined
                                 v-model="newScanData.target"
-                                :rules="[v => !!v || 'Target is required']"
+                                :rules="[v => !!v || '目标为空']"
                                 rows="2"
-                                label="Target"
+                                label="目标"
                         ></v-textarea>
                         <v-text-field
                                 class="mt-n4"
                                 v-else
-                                label="Target"
+                                label="目标"
                                 v-model="newScanData.target"
-                                :rules="[v => !!v || 'Target is required']"
+                                :rules="[v => !!v || '目标为空']"
                                 persistent-hint
                                 required
                         ></v-text-field>
@@ -254,7 +254,7 @@
                         <v-slider
                                 v-model="newScanData.threads"
                                 max="15"
-                                label="Threads"
+                                label="线程数"
                                 min="1"
                                 thumb-label="always"
                         ></v-slider>
@@ -306,15 +306,15 @@
                 search: "",
                 selected: [],
                 headers: [
-                    { text: 'Task Name', value: 'name' },
-                    { text: 'Status', value: 'status' },
+                    { text: '任务名称', value: 'name' },
+                    { text: '状态', value: 'status' },
                     { text: 'Method', value: 'method' },
-                    { text: 'Target', value: 'target' },
+                    { text: '目标', value: 'target' },
                     { text: 'Vulnerable', value: 'result' },
-                    { text: 'Create Date', value: 'date' },
-                    { text: 'Last Modified', value: 'end_date' },
-                    { text: 'OP', value: 'op' },
-                    { text: 'Action', value: 'action' },
+                    { text: '创建日期', value: 'date' },
+                    { text: '结束日期', value: 'end_date' },
+                    { text: '操作人', value: 'op' },
+                    { text: '操作', value: 'action' },
                 ],
                 deleteMultiDialog: false,
                 newScanMultiDialog: false,
@@ -355,7 +355,7 @@
             },
             newScan() {
                 if (this.newScanData.name.length === 0 || this.newScanData.target.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("请检查输入");
                     return
                 }
                 let target = this.newScanData.target.split("\n");

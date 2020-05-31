@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>SUBDOMAIN TASK MANAGEMENT</span>
+                    <span>子域名任务管理</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -50,7 +50,7 @@
                 >
                     <template v-slot:activator="{ on }">
                         <v-btn elevation="0" v-on="on"  class="ml-4 mr-4">
-                            <span>Search</span>
+                            <span>搜索</span>
                         </v-btn>
                     </template>
                     <v-text-field
@@ -58,7 +58,7 @@
                             color="teal"
                             v-model="search"
                             append-icon="mdi-magnify"
-                            label="Search"
+                            label="搜索"
                             single-line
                             hide-details
                     ></v-text-field>
@@ -86,7 +86,7 @@
                         :loading="spinShow"
                         item-key="tid"
                         dense
-                        loading-text="Loading... Please wait"
+                        loading-text="加载中...请稍等"
                         :search="search"
                         show-select
                         v-model="selected"
@@ -200,7 +200,7 @@
                     </template>
                 </v-data-table>
                 <v-row v-if="items.length === 0" justify="center" class="grey--text mb-12">
-                    <h2>No available data</h2>
+                    <h2>没有数据</h2>
                     <br>
                 </v-row>
                 <v-divider/>
@@ -227,34 +227,34 @@
                     <div>
                         <table class="subtitle-1">
                             <tr>
-                                <td><strong class="teal--text">Task Name</strong></td>
+                                <td><strong class="teal--text">任务名称</strong></td>
                                 <td><span class="ml-8">{{taskDetail.name}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Target</strong></td>
+                                <td><strong class="teal--text">目标</strong></td>
                                 <td><span class="ml-8">{{taskDetail.target}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Threads</strong></td>
+                                <td><strong class="teal--text">线程数</strong></td>
                                 <td><span class="ml-8">{{taskDetail.threads}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Status</strong></td>
+                                <td><strong class="teal--text">状态</strong></td>
                                 <td><span class="ml-8">{{taskDetail.status}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Subdomain</strong></td>
+                                <td><strong class="teal--text">子域名</strong></td>
                                 <td><span class="ml-8">{{taskDetail.count}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">OP</strong></td>
+                                <td><strong class="teal--text">操作人</strong></td>
                                 <td><span class="ml-8">{{taskDetail.op}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Brute</strong></td>
+                                <td><strong class="teal--text">暴力</strong></td>
                                 <td><span class="ml-8">{{taskDetail.brute}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Web Info</strong></td>
+                                <td><strong class="teal--text">网站信息</strong></td>
                                 <td><span class="ml-8">{{taskDetail.info}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">Create Date</strong></td>
+                                <td><strong class="teal--text">创建日期</strong></td>
                                 <td><span class="ml-8">{{taskDetail.date}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">End Date</strong></td>
+                                <td><strong class="teal--text">结束日期</strong></td>
                                 <td><span class="ml-8">{{taskDetail.end_date}}</span></td>
                             </tr>
                         </table>
@@ -280,14 +280,14 @@
             search: "",
             selected: [],
             headers: [
-                { text: 'Task Name', value: 'name' },
-                { text: 'Status', value: 'status' },
-                { text: 'Subdomain', value: 'count' },
-                { text: 'Info', value: 'info' },
-                { text: 'Create Date', value: 'date' },
-                { text: 'Last Modified', value: 'end_date' },
-                { text: 'OP', value: 'op' },
-                { text: 'Action', value: 'action' },
+                { text: '任务名称', value: 'name' },
+                { text: '状态', value: 'status' },
+                { text: '子域名', value: 'count' },
+                { text: '网站信息', value: 'info' },
+                { text: '创建日期', value: 'date' },
+                { text: '结束日期', value: 'end_date' },
+                { text: '操作人', value: 'op' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             taskDetailDialogOpen: false,

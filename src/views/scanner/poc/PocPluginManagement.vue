@@ -88,7 +88,7 @@
                         @page-count="pageCount = $event"
                         :loading="spinShow"
                         item-key="tid"
-                        loading-text="Loading... Please wait"
+                        loading-text="加载中...请稍等"
                         :search="search"
                         show-select
                         v-model="selected"
@@ -145,7 +145,7 @@
                     </template>
                 </v-data-table>
                 <v-row v-if="items.length === 0" justify="center" class="grey--text mb-12">
-                    <h2>No available data</h2>
+                    <h2>没有数据</h2>
                     <br>
                 </v-row>
                 <v-divider/>
@@ -195,9 +195,9 @@
                 { text: 'Plugin Name', value: 'name' },
                 { text: 'Type', value: 'type' },
                 { text: 'APP', value: 'app' },
-                { text: 'Date', value: 'date' },
-                { text: 'OP', value: 'op' },
-                { text: 'Action', value: 'action' },
+                { text: '日期', value: 'date' },
+                { text: '操作人', value: 'op' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             codeDialogOpen: false,

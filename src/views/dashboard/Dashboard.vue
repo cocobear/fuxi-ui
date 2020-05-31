@@ -52,10 +52,10 @@
                                 <thead>
                                 <tr>
                                     <th class="text-left">Module</th>
-                                    <th class="text-left">Task Name</th>
-                                    <th class="text-left">Status</th>
-                                    <th class="text-left">OP</th>
-                                    <th class="text-left">Create Date</th>
+                                    <th class="text-left">任务名称</th>
+                                    <th class="text-left">状态</th>
+                                    <th class="text-left">操作人</th>
+                                    <th class="text-left">创建日期</th>
                                     <th class="text-left">Elapsed Time</th>
                                     <th class="text-left">Action</th>
                                 </tr>

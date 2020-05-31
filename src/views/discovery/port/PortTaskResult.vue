@@ -50,7 +50,7 @@
                 >
                     <template v-slot:activator="{ on }">
                         <v-btn elevation="0" v-on="on"  class="ml-4 mr-4">
-                            <span>Search</span>
+                            <span>搜索</span>
                         </v-btn>
                     </template>
                     <v-text-field
@@ -58,7 +58,7 @@
                             color="teal"
                             v-model="search"
                             append-icon="mdi-magnify"
-                            label="Search"
+                            label="搜索"
                             single-line
                             hide-details
                     ></v-text-field>
@@ -94,7 +94,7 @@
                         @page-count="pageCount = $event"
                         :loading="spinShow"
                         item-key="hid"
-                        loading-text="Loading... Please wait"
+                        loading-text="加载中...请稍等"
                         :search="search"
                         show-select
                         v-model="selected"

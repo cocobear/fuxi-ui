@@ -86,7 +86,7 @@
                         :loading="spinShow"
                         item-key="tid"
                         dense
-                        loading-text="Loading... Please wait"
+                        loading-text="加载中...请稍等"
                         :search="search"
                         show-select
                         v-model="selected"
@@ -226,7 +226,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">所有者</strong></td>
+                                <td><strong class="teal--text">操作人</strong></td>
                                 <td><span class="ml-8">{{taskDetail.op}}</span></td>
                             </tr>
                             <tr>
@@ -250,7 +250,7 @@
                                 <td><span class="ml-8">{{taskDetail.target}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">上次修改日期</strong></td>
+                                <td><strong class="teal--text">结束日期</strong></td>
                                 <td><span class="ml-8">{{taskDetail.date}}</span></td>
                             </tr>
                             <tr>
@@ -285,7 +285,7 @@
                 { text: '在线', value: 'online' },
                 { text: '创建日期', value: 'date' },
                 { text: '修改日期', value: 'end_date' },
-                { text: '所有者', value: 'op' },
+                { text: '操作人', value: 'op' },
                 { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
@@ -348,7 +348,7 @@
             getTaskDetail(tid) {
                 this.taskDetailDialogOpen = true;
                 this.taskDetail = {
-                    name: "Loading... Please wait",
+                    name: "加载中...请稍等",
                     target: "",
                     port: "",
                     option: "",

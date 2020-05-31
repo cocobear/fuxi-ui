@@ -9,7 +9,7 @@
                 @page-count="pageCount = $event"
                 :loading="spinShow"
                 item-key="uid"
-                loading-text="Loading... Please wait"
+                loading-text="加载中...请稍等"
                 :search="search"
                 show-select
                 v-model="selected"
@@ -257,7 +257,7 @@
             },
             newUser() {
                 if (this.newUserData.username.length === 0 || this.newUserData.password.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("请检查输入");
                     return
                 }
                 this.newUserDialogOpen = false;
@@ -297,7 +297,7 @@
             },
             updateUser() {
                 if (this.editUserData.uid.length === 0 || this.editUserData.username.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("请检查输入");
                     return
                 }
                 this.editUserDialogOpen = false;
@@ -318,7 +318,7 @@
                     password: this.changePasswdData.password,
                 };
                 if (data.username.length === 0 || data.password.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("请检查输入");
                     return
                 }
                 this.changePasswdDialogOpen = false;

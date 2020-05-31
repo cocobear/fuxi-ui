@@ -50,7 +50,7 @@
                 >
                     <template v-slot:activator="{ on }">
                         <v-btn elevation="0" v-on="on"  class="ml-4 mr-4">
-                            <span>Search</span>
+                            <span>搜索</span>
                         </v-btn>
                     </template>
                     <v-text-field
@@ -58,7 +58,7 @@
                             color="teal"
                             v-model="search"
                             append-icon="mdi-magnify"
-                            label="Search"
+                            label="搜索"
                             single-line
                             hide-details
                     ></v-text-field>
@@ -85,7 +85,7 @@
                         @page-count="pageCount = $event"
                         :loading="spinShow"
                         item-key="rid"
-                        loading-text="Loading... Please wait"
+                        loading-text="加载中...请稍等"
                         :search="search"
                         show-select
                         v-model="selected"
@@ -168,7 +168,7 @@
                     </template>
                 </v-data-table>
                 <v-row v-if="items.length === 0" justify="center" class="grey--text mb-12">
-                    <h2>No available data</h2>
+                    <h2>没有数据</h2>
                     <br>
                 </v-row>
                 <v-divider/>
@@ -216,14 +216,14 @@
             search: "",
             selected: [],
             headers: [
-                { text: 'Task Name', value: 'task_name' },
+                { text: '任务名称', value: 'task_name' },
                 { text: 'URL', value: 'target' },
                 { text: 'Vulnerability', value: 'result' },
                 { text: 'Place', value: 'place' },
                 { text: 'Para', value: 'parameter' },
                 { text: 'DBMS', value: 'dbms' },
-                { text: 'Date', value: 'date' },
-                { text: 'Action', value: 'action' },
+                { text: '日期', value: 'date' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             vulDialogOpen: false,

@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>WEBSITE FINGERPRINT</span>
+                    <span>网站指纹</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -21,18 +21,18 @@
             <v-col cols="4">
                 <v-text-field
                         class="ml-6"
-                        label="URL"
+                        label="网址"
                         persistent-hint
                         required
                         v-model="scanTestData.url"
                 ></v-text-field>
             </v-col>
             <v-col cols="2">
-                <v-btn @click="scanTemp" class="mt-3" elevation="0">Start Scan</v-btn>
+                <v-btn @click="scanTemp" class="mt-3" elevation="0">开始扫描</v-btn>
             </v-col>
             <v-col cols="2">
                 <v-btn @click="openAdScanDialog" class="mt-3" color="teal" elevation="0">
-                    <span class="white--text">Advanced Scan</span>
+                    <span class="white--text">高级扫描</span>
                 </v-btn>
             </v-col>
             <v-col cols="4">
@@ -41,7 +41,7 @@
                         @click="taskDialogOpen = true"
                         class="float-right mt-2 mr-6"
                         elevation="0">
-                    View Historical Tasks &rarr;
+                    查看历史任务 &rarr;
                 </v-btn>
             </v-col>
             <v-col cols="12" >
@@ -64,7 +64,7 @@
                         required
                         class="ml-n4"
                         @keyup.enter.native="search"
-                        placeholder="Search"
+                        placeholder="搜索"
                 ></v-text-field>
             </v-col>
             <v-col v-if="searchOPT.type === 'APP'" class="mt-n6" cols="2">
@@ -86,7 +86,7 @@
                 <div class="ml-7">
                     <table>
                         <tr>
-                            <td><span class="mr-6 subtitle-2">TOTAL</span></td>
+                            <td><span class="mr-6 subtitle-2">总计:</span></td>
                             <td><span>{{items.length}}</span></td>
                         </tr>
 <!--                        <tr>-->
@@ -98,7 +98,7 @@
                 <div class="ml-6 mt-12">
                     <v-btn @click="exportData" elevation="0">
                         <v-icon class="mr-2">mdi-content-save-move</v-icon>
-                        <strong>Export XLS</strong>
+                        <strong>导出XLS</strong>
                     </v-btn>
                 </div>
                 <br>
@@ -106,7 +106,7 @@
                 <div class="ml-6 mt-12">
                     <v-btn @click="sendIPToNetworkPortScanner"  elevation="0">
                         <v-icon class="mr-2">mdi-plus</v-icon>
-                        <strong >port scan</strong>
+                        <strong >端口扫描</strong>
                     </v-btn>
                     <v-btn @click="sendDomainToPocScanner" class="mt-4" elevation="0">
                         <v-icon class="mr-2">mdi-plus</v-icon>
@@ -125,10 +125,10 @@
                 </v-card-title>
                 <v-card-text>
                     <span v-if="scanTestData.result.length === 0">
-                        Scanning... Please wait
+                        正在扫描中...
                     </span>
                     <span v-else-if="scanTestData.result === 'None'">
-                        No available data was found
+                        没有数据
                     </span>
                     <div v-else>
                         <div v-for="(item, index) in scanTestData.result" :key="index" class="mr-4 ml-2">
@@ -165,15 +165,15 @@
         <v-dialog v-model="advancedTaskDialogOpen" width="500px">
             <v-card>
                 <v-card-title>
-                    <span class="headline ml-3 teal--text">Advanced Scan</span>
+                    <span class="headline ml-3 teal--text">高级扫描</span>
                 </v-card-title>
                 <v-card-text>
                     <v-row>
                         <v-col cols="12" class="mt-n3">
                             <v-text-field
-                                    label="Task Name"
+                                    label="任务名称"
                                     class="mr-3 ml-3"
-                                    :rules="[v => !!v || 'Task name is required']"
+                                    :rules="[v => !!v || '任务名称为空']"
                                     persistent-hint
                                     required
                                     v-model="adScanOPT.name"
@@ -182,12 +182,12 @@
 
                         <v-col cols="12" class="mt-n4">
                             <v-textarea
-                                    label="TARGET"
+                                    label="目标"
                                     outlined
                                     rows="5"
                                     dense
                                     class="mr-2 ml-2"
-                                    :rules="[v => !!v || 'Target is required']"
+                                    :rules="[v => !!v || '目标为空']"
                                     v-model="adScanOPT.target"
                                     :placeholder="targetExampleText"
                             ></v-textarea>
@@ -198,7 +198,7 @@
                                     :items="adScanLevel"
                                     v-model="adScanOPT.level"
                                     outlined
-                                    label="LEVEL"
+                                    label="级别"
                                     dense
                                     single-line
                                     class="mr-2 ml-2"
@@ -215,7 +215,7 @@
                                     class="mr-3 ml-3"
                                     v-model="adScanOPT.header"
                                     persistent-hint
-                                    placeholder="Not necessary  e.g. 'Foo:Bar'"
+                                    placeholder="可选 例如:'Foo:Bar'"
                                     required
                             ></v-text-field>
                         </v-col>
@@ -226,7 +226,7 @@
                                     class="mr-3 ml-3"
                                     v-model="adScanOPT.cookies"
                                     persistent-hint
-                                    placeholder="Not necessary  e.g. 'name=value; name2=value2'"
+                                    placeholder="可选 例如: 'name=value; name2=value2'"
                                     required
                             ></v-text-field>
                         </v-col>
@@ -235,14 +235,14 @@
                             <v-slider
                                     class="ml-4 mt-6"
                                     v-model="adScanOPT.threads"
-                                    label="Threads"
+                                    label="线程数"
                                     thumb-label="always"
                             ></v-slider>
                         </v-col>
 
                         <v-col cols="12">
                             <v-btn @click="adScan" color="teal" class="float-right ml-2 mr-2 mb-4">
-                                <span class="white--text">Create</span>
+                                <span class="white--text">创建</span>
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -257,7 +257,7 @@
                     </v-list-item-action>
                     <v-list-item-content class="ml-n4">
                         <v-list-item-title class="teal--text">
-                            <span>TASKS</span>
+                            <span>任务</span>
                         </v-list-item-title>
                     </v-list-item-content>
                 </v-card-title>
@@ -326,7 +326,7 @@
             search() {
                 let data = "";
                 if(this.searchOPT.keyword.length === 0) {
-                    // this.$message.error("Please check you input");
+                    // this.$message.error("请检查输入");
                     this.getData();
                     return
                 }
@@ -354,11 +354,11 @@
             scanTemp() {
                 this.scanTestData.result = [];
                 if(!this.whatwebExe) {
-                    this.$message.error("Whatweb is not installed, please try again after installation");
+                    this.$message.error("Whatweb未安装");
                     return
                 }
                 if(this.scanTestData.url.length === 0) {
-                    this.$message.error("URL is required");
+                    this.$message.error("网址为空");
                     return
                 }
                 let data = {target: this.scanTestData.url};
@@ -387,7 +387,7 @@
             },
             adScan() {
                 if(!this.whatwebExe) {
-                    this.$message.error("Whatweb is not installed, please try again after installation");
+                    this.$message.error("Whatweb未安装");
                     return
                 }
                 let data = {
@@ -398,7 +398,7 @@
                     cookie: this.adScanOPT.cookie,
                 };
                 if (data.name.length === 0 || data.target.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("请检查输入内容");
                     return
                 }
                 this.advancedTaskDialogOpen = false;
