@@ -108,7 +108,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span>Detail</span>
+                                                <span>详情</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -311,8 +311,8 @@
                     { text: '方法', value: 'method' },
                     { text: '目标', value: 'target' },
                     { text: '结果', value: 'result' },
-                    { text: '创建日期', value: 'date' },
-                    { text: '结束日期', value: 'end_date' },
+                    { text: '开始时间', value: 'date' },
+                    { text: '结束时间', value: 'end_date' },
                     { text: '动作人', value: 'op' },
                     { text: '动作', value: 'action' },
                 ],

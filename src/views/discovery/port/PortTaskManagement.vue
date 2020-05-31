@@ -250,7 +250,7 @@
                                 <td><span class="ml-8">{{taskDetail.target}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">结束日期</strong></td>
+                                <td><strong class="teal--text">开始时间</strong></td>
                                 <td><span class="ml-8">{{taskDetail.date}}</span></td>
                             </tr>
                             <tr>
@@ -283,8 +283,8 @@
                 { text: '任务名称', value: 'name' },
                 { text: '状态', value: 'status' },
                 { text: '在线', value: 'online' },
-                { text: '创建日期', value: 'date' },
-                { text: '修改日期', value: 'end_date' },
+                { text: '开始时间', value: 'date' },
+                { text: '结束时间', value: 'end_date' },
                 { text: '操作人', value: 'op' },
                 { text: '动作', value: 'action' },
             ],

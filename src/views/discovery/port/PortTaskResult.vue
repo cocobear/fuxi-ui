@@ -137,7 +137,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="teal--text">Detail</span>
+                                                <span class="teal--text">详情</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
