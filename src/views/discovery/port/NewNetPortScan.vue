@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>NEW SCAN</span>
+                    <span>新建端口扫描</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -21,9 +21,9 @@
                 </span>
                 <v-col>
                     <v-text-field
-                            label="Task Name"
+                            label="任务名称"
                             v-model="newTaskData.name"
-                            :rules="[v => !!v || 'Task name is required']"
+                            :rules="[v => !!v || '任务名称必填']"
                             persistent-hint
                             required
                     ></v-text-field>
@@ -32,18 +32,18 @@
                 <v-col cols="6" class="mt-n8">
                     <v-combobox
                             v-model="newTaskData.portType"
-                            :items="['Default', 'Customize', 'All']"
-                            label="Port"
+                            :items="['默认', '自定义', '全部']"
+                            label="端口"
                     ></v-combobox>
                 </v-col>
 
-                <v-col cols="12" class="mt-n6" v-if="newTaskData.portType === 'Customize'">
+                <v-col cols="12" class="mt-n6" v-if="newTaskData.portType === '自定义'">
                     <v-textarea
                             outlined
                             :placeholder="portPlaceholder"
                             v-model="newTaskData.portList"
                             rows="2"
-                            label="Port"
+                            label="端口"
                     ></v-textarea>
                 </v-col>
 
@@ -51,17 +51,17 @@
                     <v-combobox
                             v-model="newTaskData.option"
                             :items="defaultOption"
-                            label="Option"
+                            label="选项"
                     ></v-combobox>
                 </v-col>
 
                 <v-col cols="12" class="mt-n4">
                     <v-textarea
                             outlined
-                            :rules="[v => !!v || 'Target is required']"
+                            :rules="[v => !!v || '目标必填']"
                             v-model="newTaskData.target"
                             rows="5"
-                            label="Target"
+                            label="目标"
                             :placeholder="targetPlaceholder"
                     ></v-textarea>
                 </v-col>
@@ -69,7 +69,7 @@
                 <v-col class="mb-4 text-right">
                     <v-btn class="teal" @click="newScan">
                         <v-icon class="white--text">mdi-plus</v-icon>
-                        <span class="white--text ml-2 mr-1">New scan</span>
+                        <span class="white--text ml-2 mr-1">开始扫描</span>
                     </v-btn>
                 </v-col>
             </v-col>
@@ -84,16 +84,16 @@
             return {
                 target: "",
                 newTaskData: {
-                    name: "", target: "", portType: "Default", portList: "", option: {text: "Default", value: "10001"},
+                    name: "", target: "", portType: "默认", portList: "", option: {text: "默认", value: "10001"},
                 },
                 nmapExe: true,
                 defaultOption: [
-                    {text: "Default", value: "10001"},
+                    {text: "默认", value: "10001"},
                     {text: "-sT -T4", value: "10002"},
                     {text: "-Pn", value: "10003"},
                 ],
-                targetPlaceholder: "Example:\n192.168.1.1\n192.168.2.0/24\nwww.test.com",
-                portPlaceholder: "Example: 22,23,80,8080,9090",
+                targetPlaceholder: "例如:\n192.168.1.1\n192.168.2.0/24\nwww.test.com",
+                portPlaceholder: "例如: 22,23,80,8080,9090",
             }
         },
         mounted() {
@@ -107,18 +107,18 @@
         methods: {
             newScan() {
                 if (!this.nmapExe) {
-                    this.$message.error("Nmap is not installed, please try again after installation")
+                    this.$message.error("Nmap未安装")
                     return;
                 }
                 let port = "";
-                if (this.newTaskData.portType === "Customize") {
+                if (this.newTaskData.portType === "自定义") {
                     port = this.newTaskData.portList.split("\n").join(",");
                     if (port.length === 0) {
-                        this.$message.error("Please enter the specific port");
+                        this.$message.error("请指定端口");
                         return
                     }
                 }
-                if (this.newTaskData.portType === "All") {
+                if (this.newTaskData.portType === "全部") {
                     port = "1-65535";
                 }
                 let data = {
@@ -128,12 +128,12 @@
                     option: this.newTaskData.option.value
                 };
                 if (data.name.length === 0 || data.target.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("输入内容不完整");
                     return
                 }
                 this.$api.discovery.portTaskNew(data).then(res => {
                     this.newTaskData = {
-                        name: "", target: "", portType: "Default", portList: "", option: {text: "Default", value: "10001"},
+                        name: "", target: "", portType: "默认", portList: "", option: {text: "默认", value: "10001"},
                     };
 
                     let response = res.data;

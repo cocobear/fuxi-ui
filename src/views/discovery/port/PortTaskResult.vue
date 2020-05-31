@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>PORT</span>
+                    <span>端口</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -23,20 +23,20 @@
                 <v-dialog v-model="deleteMultiDialog" max-width="370">
                     <v-card>
                         <v-card-title class="headline">
-                            <span style="color: #FFC107">Warning</span>
+                            <span style="color: #FFC107">警告</span>
                         </v-card-title>
                         <v-card-text>
-                            Are you sure the you want to remove this item ？
+                            确认要删除吗？
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn color="grey darken-1" text @click="deleteMultiDialog = false">
-                                Cancel
+                                取消
                             </v-btn>
                             <v-btn
                                     color="primary darken-1"
                                     text>
-                                Confirm
+                                确认
                             </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -72,7 +72,7 @@
                 </v-btn>
                 <v-btn @click="sendTargetToPocScanner" elevation="0" color="teal">
                     <v-icon class="white--text mr-2">mdi-credit-card-scan-outline</v-icon>
-                    <span class="white--text">PoC Scan</span>
+                    <span class="white--text">PoC扫描</span>
                 </v-btn>
                 <v-select
                         class="float-right mr-4"
@@ -158,7 +158,7 @@
                     </template>
                 </v-data-table>
                 <v-row v-if="items.length === 0" justify="center" class="grey--text mb-12">
-                    <h2>No available data</h2>
+                    <h2>没有数据</h2>
                     <br>
                 </v-row>
                 <v-divider/>
@@ -221,12 +221,12 @@
             search: "",
             selected: [],
             headers: [
-                { text: 'Task Name', value: 'name' },
-                { text: 'Hostname', value: 'hostname' },
-                { text: 'Host', value: 'host' },
-                { text: 'Port', value: 'port_str' },
-                { text: 'Date', value: 'date' },
-                { text: 'Action', value: 'action' },
+                { text: '任务名称', value: 'name' },
+                { text: '主机名', value: 'hostname' },
+                { text: 'IP', value: 'host' },
+                { text: '端口', value: 'port_str' },
+                { text: '日期', value: 'date' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             hostDetailDialogOpen: false,

@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>PORT SCAN TASK MANAGEMENT</span>
+                    <span>端口扫描管理</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -50,7 +50,7 @@
                 >
                     <template v-slot:activator="{ on }">
                         <v-btn elevation="0" v-on="on"  class="ml-4 mr-4">
-                            <span>Search</span>
+                            <span>搜索</span>
                         </v-btn>
                     </template>
                     <v-text-field
@@ -58,7 +58,7 @@
                             color="teal"
                             v-model="search"
                             append-icon="mdi-magnify"
-                            label="Search"
+                            label="搜索"
                             single-line
                             hide-details
                     ></v-text-field>
@@ -140,7 +140,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span>Export</span>
+                                                <span>导出</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -151,7 +151,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="orange--text">Detail</span>
+                                                <span class="orange--text">详情</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -162,7 +162,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="teal--text">Rescan</span>
+                                                <span class="teal--text">重新扫描</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -173,7 +173,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="error--text">Delete</span>
+                                                <span class="error--text">删除</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -183,7 +183,7 @@
                     </template>
                 </v-data-table>
                 <v-row v-if="items.length === 0" justify="center" class="grey--text mb-12">
-                    <h2>No available data</h2>
+                    <h2>没有数据</h2>
                     <br>
                 </v-row>
                 <v-divider/>
@@ -210,15 +210,15 @@
                     <div>
                         <table class="subtitle-1">
                             <tr>
-                                <td><strong class="teal--text">Task Name</strong></td>
+                                <td><strong class="teal--text">任务名称</strong></td>
                                 <td><span class="ml-8">{{taskDetail.name}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Task ID</strong></td>
+                                <td><strong class="teal--text">任务ID</strong></td>
                                 <td><span class="ml-8">{{taskDetail.task_id}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Status</strong></td>
+                                <td><strong class="teal--text">状态</strong></td>
                                 <td>
                                     <v-btn class="ml-8" x-small elevation="0" color="grey lighten-3">
                                         {{taskDetail['status']}}
@@ -226,11 +226,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Owner</strong></td>
+                                <td><strong class="teal--text">所有者</strong></td>
                                 <td><span class="ml-8">{{taskDetail.op}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Online Host</strong></td>
+                                <td><strong class="teal--text">在线</strong></td>
                                 <td>
                                     <v-btn class="ml-8" x-small elevation="0" color="grey lighten-3">
                                         {{taskDetail['online']}}
@@ -238,23 +238,23 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Option</strong></td>
+                                <td><strong class="teal--text">选项</strong></td>
                                 <td><span class="ml-8">{{taskDetail.option}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Port</strong></td>
+                                <td><strong class="teal--text">端口</strong></td>
                                 <td><span class="ml-8">{{taskDetail.port}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="mr-4 teal--text">Target</strong></td>
+                                <td><strong class="mr-4 teal--text">目标</strong></td>
                                 <td><span class="ml-8">{{taskDetail.target}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">Last Modified</strong></td>
+                                <td><strong class="teal--text">上次修改日期</strong></td>
                                 <td><span class="ml-8">{{taskDetail.date}}</span></td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">End date</strong></td>
+                                <td><strong class="teal--text">结束时间</strong></td>
                                 <td><span class="ml-8">{{taskDetail.end_date}}</span></td>
                             </tr>
                         </table>
@@ -262,7 +262,7 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" text @click="taskDetailDialogOpen = false">Close</v-btn>
+                    <v-btn color="green darken-1" text @click="taskDetailDialogOpen = false">关闭</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -280,13 +280,13 @@
             search: "",
             selected: [],
             headers: [
-                { text: 'Task Name', value: 'name' },
-                { text: 'Status', value: 'status' },
-                { text: 'Online', value: 'online' },
-                { text: 'Create Date', value: 'date' },
-                { text: 'Last Modified', value: 'end_date' },
-                { text: 'OP', value: 'op' },
-                { text: 'Action', value: 'action' },
+                { text: '任务名称', value: 'name' },
+                { text: '状态', value: 'status' },
+                { text: '在线', value: 'online' },
+                { text: '创建日期', value: 'date' },
+                { text: '修改日期', value: 'end_date' },
+                { text: '所有者', value: 'op' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             taskDetailDialogOpen: false,
