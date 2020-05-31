@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>POC PLUGIN MANAGEMENT</span>
+                    <span>POC插件管理</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -23,20 +23,20 @@
                 <v-dialog v-model="deleteMultiDialog" max-width="370">
                     <v-card>
                         <v-card-title class="headline">
-                            <span style="color: #FFC107">Warning</span>
+                            <span style="color: #FFC107">当心</span>
                         </v-card-title>
                         <v-card-text>
-                            Are you sure the you want to remove this item ？
+                            确认要删除所选项吗？ ？
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn color="grey darken-1" text @click="deleteMultiDialog = false">
-                                Cancel
+                                取消
                             </v-btn>
                             <v-btn
                                     color="primary darken-1"
                                     text>
-                                Confirm
+                                确认
                             </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -58,10 +58,10 @@
                             <v-file-input class="ml-4 mr-4 mt-2"
                                           multiple
                                           v-model="pocFiles"
-                                          label="Click here to select plugin file">
+                                          label="点这里选择插件">
                             </v-file-input>
                             <v-btn small @click="uploadPlugin" color="teal" class="ml-6 mr-4 mb-2">
-                                <span class="white--text">Upload</span>
+                                <span class="white--text">上传</span>
                             </v-btn>
                         </v-col>
                     </v-card>
@@ -123,7 +123,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span>Code</span>
+                                                <span>代码</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -134,7 +134,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="error--text">Delete</span>
+                                                <span class="error--text">删除</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -192,12 +192,12 @@
             search: "",
             selected: [],
             headers: [
-                { text: 'Plugin Name', value: 'name' },
-                { text: 'Type', value: 'type' },
-                { text: 'APP', value: 'app' },
+                { text: '插件名称', value: 'name' },
+                { text: '类型', value: 'type' },
+                { text: '应用', value: 'app' },
                 { text: '日期', value: 'date' },
                 { text: '操作人', value: 'op' },
-                { text: '操作', value: 'action' },
+                { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,
             codeDialogOpen: false,
@@ -251,7 +251,7 @@
             },
             uploadPlugin() {
                 if (!this.pocFiles) {
-                    this.$message.error("please select plugin files");
+                    this.$message.error("请选择插件文件");
                     return
                 }
                 for (let i=0; i<this.pocFiles.length; i++) {

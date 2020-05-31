@@ -148,7 +148,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="error--text">Delete</span>
+                                                <span class="error--text">删除</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -226,7 +226,7 @@
                 { text: 'IP', value: 'host' },
                 { text: '端口', value: 'port_str' },
                 { text: '日期', value: 'date' },
-                { text: '操作', value: 'action' },
+                { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,
             hostDetailDialogOpen: false,

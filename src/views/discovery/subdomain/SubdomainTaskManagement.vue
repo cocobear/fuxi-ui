@@ -23,20 +23,20 @@
                 <v-dialog v-model="deleteMultiDialog" max-width="370">
                     <v-card>
                         <v-card-title class="headline">
-                            <span style="color: #FFC107">Warning</span>
+                            <span style="color: #FFC107">当心</span>
                         </v-card-title>
                         <v-card-text>
-                            Are you sure the you want to remove this item ？
+                            确认要删除所选项吗？ ？
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn color="grey darken-1" text @click="deleteMultiDialog = false">
-                                Cancel
+                                取消
                             </v-btn>
                             <v-btn
                                     color="primary darken-1"
                                     text>
-                                Confirm
+                                确认
                             </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -190,7 +190,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="error--text">Delete</span>
+                                                <span class="error--text">删除</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -287,7 +287,7 @@
                 { text: '创建日期', value: 'date' },
                 { text: '结束日期', value: 'end_date' },
                 { text: '操作人', value: 'op' },
-                { text: '操作', value: 'action' },
+                { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,
             taskDetailDialogOpen: false,

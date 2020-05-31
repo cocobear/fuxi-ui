@@ -201,7 +201,7 @@
                 { text: '邮箱', value: 'email' },
                 { text: '角色', value: 'role' },
                 { text: '添加日期', value: 'date' },
-                { text: '操作', value: 'action' },
+                { text: '动作', value: 'action' },
             ],
             newUserData: {
                 username: "",

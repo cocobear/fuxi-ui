@@ -6,14 +6,14 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>SQL INJECTION</span>
+                    <span>SQL注入</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
 
         <v-row class="mt-n2">
             <span v-if="!sqlmapAPI" class="error--text ml-8">
-                ** The sqlmap api service configuration was not found, you need to configure it
+                ** sqlmap 服务不可用
                 <a href="/#/settings" class="ml-2">Go to</a>
             </span>
             <v-col cols="12">
@@ -26,7 +26,7 @@
                 </v-btn>
 
                 <v-btn @click="openNewScanDialog" small color="teal" elevation="0" class="ml-5 mr-12">
-                    <span class="white--text">New Scan</span>
+                    <span class="white--text">新建扫描</span>
                 </v-btn>
                 <v-select
                         class="float-right mr-4"
@@ -141,7 +141,7 @@
                                         </v-list-item-action>
                                         <v-list-item-content class="ml-n4 mr-4">
                                             <v-list-item-title>
-                                                <span class="error--text">Delete</span>
+                                                <span class="error--text">删除</span>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -170,7 +170,7 @@
         <v-dialog v-model="newScanMultiDialog" max-width="600">
             <v-card>
                 <v-card-title class="headline">
-                    <span>SQL Injection</span>
+                    <span>SQL注入</span>
                 </v-card-title>
                 <v-card-text>
                     <v-col>
@@ -188,14 +188,14 @@
                                     @change="newScanData.target = ''"
                                     v-model="newScanData.method"
                                     :items="['GET', 'POST']"
-                                    label="Request Method"
+                                    label="请求方法"
                             ></v-combobox>
                         </v-col>
                         <v-col cols="5" class="mt-n6 ml-2">
                             <v-combobox
                                     v-model="newScanData.level"
                                     :items="[1, 2, 3, 4, 5]"
-                                    label="Level"
+                                    label="级别"
                             ></v-combobox>
                         </v-col>
                     </v-row>
@@ -247,7 +247,7 @@
                         <v-combobox
                                 v-model="newScanData.timeout"
                                 :items="[60*5, 60*10, 60*30]"
-                                label="Timeout"
+                                label="超时"
                         ></v-combobox>
                     </v-col>
                     <v-col cols="12" class="mt-n4">
@@ -263,14 +263,14 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn class="mt-n12" color="grey darken-1" text @click="newScanMultiDialog = false">
-                        Cancel
+                        取消
                     </v-btn>
                     <v-btn
                             class="mt-n12"
                             @click="newScan"
                             color="primary darken-1"
                             text>
-                        Confirm
+                        确认
                     </v-btn>
                 </v-card-actions>
             </v-card>
@@ -308,13 +308,13 @@
                 headers: [
                     { text: '任务名称', value: 'name' },
                     { text: '状态', value: 'status' },
-                    { text: 'Method', value: 'method' },
+                    { text: '方法', value: 'method' },
                     { text: '目标', value: 'target' },
-                    { text: 'Vulnerable', value: 'result' },
+                    { text: '结果', value: 'result' },
                     { text: '创建日期', value: 'date' },
                     { text: '结束日期', value: 'end_date' },
-                    { text: '操作人', value: 'op' },
-                    { text: '操作', value: 'action' },
+                    { text: '动作人', value: 'op' },
+                    { text: '动作', value: 'action' },
                 ],
                 deleteMultiDialog: false,
                 newScanMultiDialog: false,

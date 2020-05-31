@@ -7,7 +7,7 @@
                         <td><span class="subtitle-1">工具名</span></td>
                         <td><span class="subtitle-1">描述</span></td>
                         <td><span class="subtitle-1">位置</span></td>
-                        <td><span class="subtitle-1">操作</span></td>
+                        <td><span class="subtitle-1">动作</span></td>
                     </tr>
                     <tr v-for="(item, index) in items" :key="index">
                         <td><span class="mr-4">{{item['key']}}</span></td>
