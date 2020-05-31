@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>NEW SCAN</span>
+                    <span>新建扫描</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -17,9 +17,9 @@
             <v-col cols="6">
                 <v-col>
                     <v-text-field
-                            label="Task Name"
+                            label="任务名称"
                             v-model="newTaskData.name"
-                            :rules="[v => !!v || 'Task name is required']"
+                            :rules="[v => !!v || '任务名称为空']"
                             persistent-hint
                             required
                     ></v-text-field>
@@ -27,9 +27,11 @@
 
                 <v-col cols="6" class="mt-n6">
                     <v-combobox
-                            v-model="newTaskData.freq"
-                            :items="['Once', 'Daily', 'Weekly', 'Monthly']"
-                            label="Frequency"
+                            v-model="freq"
+                            :items="freq_items"
+                            item-text="desc"
+                            item-value="value"
+                            label="频率"
                     ></v-combobox>
                 </v-col>
 
@@ -40,15 +42,15 @@
 
                         <div class="mr-2 ml-2 mt-2">
                             <strong class="teal--text">
-                                Plugins: {{ plugins.length }}
+                                插件: {{ plugins.length }}
                             </strong>
                             <strong class="ml-1 mr-1 grey--text">|</strong>
                             <strong class="success--text">
-                                Selected: {{ completedTasks.length }}
+                                已选: {{ completedTasks.length }}
                             </strong>
                             <v-text-field
                                     class="mt-n1"
-                                    label="Filter"
+                                    label="过滤"
                                     v-model="pluginFilter"
                             ></v-text-field>
                             <v-data-iterator
@@ -108,10 +110,10 @@
                 <v-col cols="12">
                     <v-textarea
                             outlined
-                            :rules="[v => !!v || 'Target is required']"
+                            :rules="[v => !!v || '目标为空']"
                             v-model="newTaskData.target"
                             rows="5"
-                            label="Target"
+                            label="目标"
                             :placeholder="targetPlaceholder"
                     ></v-textarea>
                 </v-col>
@@ -119,7 +121,7 @@
                 <v-col cols="12" class="mt-n3">
                     <v-slider
                             v-model="newTaskData.threads"
-                            label="Threads"
+                            label="线程数"
                             thumb-label="always"
                             value="30"
                     ></v-slider>
@@ -128,7 +130,7 @@
                 <v-col class="mb-4 text-right">
                     <v-btn class="teal" @click="newScan">
                         <v-icon class="white--text">mdi-plus</v-icon>
-                        <span class="white--text ml-2 mr-1">New scan</span>
+                        <span class="white--text ml-2 mr-1">开始扫描</span>
                     </v-btn>
                 </v-col>
             </v-col>
@@ -143,8 +145,13 @@
             return {
                 pluginFilter: "",
                 plugins: [],
+                freq_items: [{'desc':'一次', 'value':'Once'}, 
+                            {'desc':'每天', 'value':'Daily'}, 
+                            {'desc':'每周', 'value':'Weekly'},
+                            {'desc':'每月', 'value':'Monthly'}],
+                freq: {'desc':'一次', 'value':'Once'},
                 newTaskData: {
-                    name: "", freq: "Once", poc:"", target: "", threads: 30,
+                    name: "", freq: {'desc':'一次', 'value':'Once'}, poc:"", target: "", threads: 30,
                 },
                 targetPlaceholder: "Example:\n192.168.1.1\n192.168.2.0/24\nwww.test.com",
             }
@@ -186,17 +193,19 @@
             },
             newScan() {
                 let plugins = [];
+                this.newTaskData.freq = this.freq.value;
+                // console.log("freq", this.newTaskData);
                 for (let i=0; i<this.plugins.length; i++) {
                     if (this.plugins[i]['done']) {
                         plugins.push(this.plugins[i]['pid'])
                     }
                 }
                 if (plugins.length === 0) {
-                    this.$message.error("You need to select the plugin");
+                    this.$message.error("请选择插件");
                     return
                 }
                 if (this.newTaskData.name.length === 0 || this.newTaskData.target.length === 0) {
-                    this.$message.error("Please check you input");
+                    this.$message.error("请检查输入");
                     return
                 }
                 this.newTaskData.poc = plugins.join(",");
@@ -208,7 +217,7 @@
                         this.$message.success(status['message']);
                         this.$router.push('/scanner/poc/tasks');
                         this.newTaskData = {
-                            name: "", freq: "Once", poc:"", target: "", threads: 30,
+                            name: "", freq: {'desc':'一次', 'value':'Once'}, poc:"", target: "", threads: 30,
                         }
                     } else {
                         this.$message.error(status['message']);
