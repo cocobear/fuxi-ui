@@ -4,10 +4,10 @@
             <v-col cols="12">
                 <table>
                     <tr>
-                        <td><span class="subtitle-1">KEY</span></td>
-                        <td><span class="subtitle-1">DESC</span></td>
-                        <td><span class="subtitle-1">VALUE</span></td>
-                        <td><span class="subtitle-1">ACTION</span></td>
+                        <td><span class="subtitle-1">工具名</span></td>
+                        <td><span class="subtitle-1">描述</span></td>
+                        <td><span class="subtitle-1">位置</span></td>
+                        <td><span class="subtitle-1">操作</span></td>
                     </tr>
                     <tr v-for="(item, index) in items" :key="index">
                         <td><span class="mr-4">{{item['key']}}</span></td>
@@ -19,7 +19,7 @@
                         </td>
                         <td>
                             <v-btn small elevation="0">
-                                <span @click="updateConfig(item['cid'], item['key'], item['value'])">update</span>
+                                <span @click="updateConfig(item['cid'], item['key'], item['value'])">更新</span>
                             </v-btn>
                         </td>
                     </tr>

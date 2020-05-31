@@ -3,7 +3,7 @@
         <v-list-item-avatar @click="goToPath('/')" tile size="80" class="ml-4 mr-4">
             <img src="@/assets/images/fuxi_v3.svg" alt="logo"/>
         </v-list-item-avatar>
-        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">Penetration Testing Platform</span>
+        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">安全测试平台</span>
         <v-spacer />
         <div>
             <div >
@@ -36,26 +36,6 @@
 <!--                    <span>Language(unfinished)</span>-->
 <!--                </v-tooltip>-->
 
-                <v-menu left offset-y>
-                    <template v-slot:activator="{ on }">
-                        <span v-on="on" :class="'mr-4 ml-12 flag-icon flag-icon-' + language"/>
-                    </template>
-
-                    <v-list>
-                        <div @click="language = 'us'">
-                            <span class="mr-4 ml-4 flag-icon flag-icon-us"/>
-                            <span class="mr-3 grey--text">English</span>
-                        </div>
-                    </v-list>
-                    <v-divider/>
-                    <v-list>
-                        <div @click="language = 'cn'">
-                            <span class="mr-4 ml-4 flag-icon flag-icon-cn"/>
-                            <span class="mr-3 grey--text">Unfinished</span>
-                        </div>
-                    </v-list>
-                </v-menu>
-
                 <v-menu>
                     <template v-slot:activator="{ on }">
                         <v-btn icon class="mr-1" v-on="on">
@@ -82,24 +62,7 @@
                             </v-list-item-action>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    <span>Settings</span>
-                                </v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-
-                        <v-list-item>
-                            <v-list-item-action>
-                                <v-icon>mdi-book-search
-                                </v-icon>
-                            </v-list-item-action>
-                            <v-list-item-content>
-                                <v-list-item-title>
-                                        <a
-                                                class="black--text"
-                                                href="https://github.com/jeffzh3ng/fuxi#issues"
-                                                target="_blank">
-                                            Help & Documentation
-                                        </a>
+                                    <span>设置</span>
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
@@ -112,7 +75,7 @@
                             </v-list-item-action>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    <span class="error--text">Logout</span>
+                                    <span class="error--text">退出</span>
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>

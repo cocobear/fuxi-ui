@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n3">
                 <v-list-item-title class="teal--text">
-                    <span>Dashboard</span>
+                    <span>面板</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -37,14 +37,14 @@
                         </v-list-item-action>
                         <v-list-item-content class="ml-n3">
                             <v-list-item-title class="teal--text">
-                                <span>Running tasks</span>
+                                <span>进行中的任务</span>
                             </v-list-item-title>
                         </v-list-item-content>
                     </v-card-title>
                     <v-card-text>
                         <div v-if="runningTaskItems.length === 0" class="ml-1">
                             <span class="subtitle-1">
-                                No tasks are currently running
+                                暂时没有任务运行
                             </span>
                         </div>
                         <v-simple-table v-if="runningTaskItems.length !== 0" class="mt-n4">
@@ -118,7 +118,7 @@
                         </v-list-item-action>
                         <v-list-item-content class="ml-n3">
                             <v-list-item-title class="teal--text">
-                                <span>Memory</span>
+                                <span>内存</span>
                             </v-list-item-title>
                         </v-list-item-content>
                     </v-card-title>
@@ -143,11 +143,11 @@
         data: () => ({
             spinShow: true,
             countStatisticsItems: [
-                {text: "VULNERABILITY", value: 0, icon: "mdi-bug", path: "/scanner/poc/vul"},
-                {text: "XSS SHEEP", value: 0, icon: "mdi-card-account-details-outline", path: "/exploit/xss/result"},
-                {text: "SQL INJECTION", value: 0, icon: "mdi-needle", path: "/scanner/sqlmap/tasks"},
+                {text: "漏洞", value: 0, icon: "mdi-bug", path: "/scanner/poc/vul"},
+                {text: "XSS", value: 0, icon: "mdi-card-account-details-outline", path: "/exploit/xss/result"},
+                {text: "SQL注入", value: 0, icon: "mdi-needle", path: "/scanner/sqlmap/tasks"},
                 // {text: "JSONP SHEEP", value: 0, icon: "mdi-anchor", path: "/exploit/jsonp/result"},
-                {text: "HTTP LOG", value: 0, icon: "mdi-iframe-array-outline", path: "/exploit/http/result"},
+                {text: "HTTP日志", value: 0, icon: "mdi-iframe-array-outline", path: "/exploit/http/result"},
             ],
             runningTaskItems: [],
         }),
@@ -166,15 +166,15 @@
                     let result = response['result'];
                     if(status['status'] === "success") {
                         for (let i=0; i<this.countStatisticsItems.length; i++) {
-                            if (this.countStatisticsItems[i].text === "VULNERABILITY") {
+                            if (this.countStatisticsItems[i].text === "漏洞") {
                                 this.countStatisticsItems[i].value = result['vuls']
-                            } else if(this.countStatisticsItems[i].text === "XSS SHEEP") {
+                            } else if(this.countStatisticsItems[i].text === "XSS") {
                                 this.countStatisticsItems[i].value = result['xss']
                             } else if (this.countStatisticsItems[i].text === "JSONP SHEEP") {
                                 this.countStatisticsItems[i].value = result['jsonp']
-                            } else if (this.countStatisticsItems[i].text === "HTTP LOG") {
+                            } else if (this.countStatisticsItems[i].text === "HTTP日志") {
                                 this.countStatisticsItems[i].value = result['http']
-                            } else if (this.countStatisticsItems[i].text === "SQL INJECTION") {
+                            } else if (this.countStatisticsItems[i].text === "SQL注入") {
                                 this.countStatisticsItems[i].value = result['sqlmap']
                             }
                         }
@@ -210,7 +210,7 @@
             },
             taskStop(celery_id, table, tid){
                 console.log(celery_id, table, tid);
-                this.$message.error("This feature is not available now");
+                this.$message.error("功能暂未实现");
                 // this.$api.dashboard.taskStop(celery_id, table, tid).then(res => {
                 //     let response = res.data;
                 //     let status = response['status'];

@@ -22,14 +22,14 @@
             </template>
         </v-data-table>
         <v-row v-if="items.length === 0" justify="center" class="grey--text mb-12">
-            <h2>No available data</h2>
+            <h2>没有数据</h2>
             <br>
         </v-row>
         <v-divider/>
         <v-row>
             <v-col cols="12">
                 <v-btn @click="newUserDialogOpen = true" class="mt-3" elevation="0" color="teal">
-                    <span class="white--text">New user</span>
+                    <span class="white--text">添加用户</span>
                 </v-btn>
                 <div class="float-right mt-1 mr-3">
                     <v-pagination
@@ -44,23 +44,23 @@
         <v-dialog v-model="newUserDialogOpen" width="500px">
             <v-card>
                 <v-card-title>
-                    <span class="headline">New Account</span>
+                    <span class="headline">添加用户</span>
                 </v-card-title>
                 <v-card-text>
                     <v-row>
                         <v-col cols="12">
                             <v-text-field
-                                    label="USERNAME"
+                                    label="用户名"
                                     class="mr-2 ml-2"
                                     v-model="newUserData.username"
-                                    :rules="[v => !!v || 'Username is required']"
+                                    :rules="[v => !!v || '用户名必填']"
                                     persistent-hint
                                     required
                             ></v-text-field>
                         </v-col>
                         <v-col cols="12" class="mt-n8">
                             <v-text-field
-                                    label="NICK"
+                                    label="昵称"
                                     class="mr-2 ml-2"
                                     v-model="newUserData.nick"
                                     persistent-hint
@@ -69,7 +69,7 @@
                         </v-col>
                         <v-col cols="12" class="mt-n8">
                             <v-text-field
-                                    label="E-MAIL"
+                                    label="邮箱"
                                     class="mr-2 ml-2"
                                     v-model="newUserData.email"
                                     persistent-hint
@@ -78,10 +78,10 @@
                         </v-col>
                         <v-col cols="12" class="mt-n8">
                             <v-text-field
-                                    label="PASSWORD"
+                                    label="密码"
                                     class="mr-2 ml-2"
                                     v-model="newUserData.password"
-                                    :rules="[v => !!v || 'Password is required']"
+                                    :rules="[v => !!v || '密码必填']"
                                     persistent-hint
                                     required
                             ></v-text-field>
@@ -89,7 +89,7 @@
 
                         <v-col cols="12" >
                             <v-btn @click="newUser" color="teal" class="float-right ml-2 mr-2 mb-4">
-                                <span class="white--text">Create</span>
+                                <span class="white--text">添加</span>
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -99,23 +99,23 @@
         <v-dialog v-model="editUserDialogOpen" width="500px">
             <v-card>
                 <v-card-title>
-                    <span class="headline">Edit Account</span>
+                    <span class="headline">编辑账号</span>
                 </v-card-title>
                 <v-card-text>
                     <v-row>
                         <v-col cols="12">
                             <v-text-field
-                                    label="USERNAME"
+                                    label="用户名"
                                     class="mr-2 ml-2"
                                     v-model="editUserData.username"
-                                    :rules="[v => !!v || 'Username is required']"
+                                    :rules="[v => !!v || '用户名必填']"
                                     persistent-hint
                                     required
                             ></v-text-field>
                         </v-col>
                         <v-col cols="12" class="mt-n8">
                             <v-text-field
-                                    label="NICK"
+                                    label="昵称"
                                     class="mr-2 ml-2"
                                     v-model="editUserData.nick"
                                     persistent-hint
@@ -124,7 +124,7 @@
                         </v-col>
                         <v-col cols="12" class="mt-n8">
                             <v-text-field
-                                    label="E-MAIL"
+                                    label="邮箱"
                                     class="mr-2 ml-2"
                                     v-model="editUserData.email"
                                     persistent-hint
@@ -134,7 +134,7 @@
 
                         <v-col cols="12" >
                             <v-btn @click="updateUser" color="teal" class="float-right ml-2 mr-2 mb-4">
-                                <span class="white--text">Update</span>
+                                <span class="white--text">更新</span>
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -144,13 +144,13 @@
         <v-dialog v-model="changePasswdDialogOpen" width="500px">
             <v-card>
                 <v-card-title>
-                    <span class="headline">CHANGE PASSWORD</span>
+                    <span class="headline">修改密码</span>
                 </v-card-title>
                 <v-card-text>
                     <v-row>
                         <v-col cols="12">
                             <v-text-field
-                                    label="NEW PASSWORD"
+                                    label="新密码"
                                     class="mr-2 ml-2"
                                     v-model="changePasswdData.password"
                                     persistent-hint
@@ -160,7 +160,7 @@
                         </v-col>
                         <v-col cols="12" class="mt-n8">
                             <v-text-field
-                                    label="VERIFY"
+                                    label="新密码(再输一次)"
                                     class="mr-2 ml-2"
                                     type="password"
                                     v-model="changePasswdData.verify"
@@ -171,11 +171,11 @@
                         <v-col class="mt-n8 ml-2">
                             <span
                                     v-if="changePasswdData.password !== changePasswdData.verify"
-                                    class="error--text">* The two passwords you entered did not match. </span>
+                                    class="error--text">* 两次输入的密码不一致 </span>
                         </v-col>
                         <v-col cols="12" >
                             <v-btn @click="changePassword" color="teal" class="float-right ml-2 mr-2 mb-4">
-                                <span class="white--text">Update</span>
+                                <span class="white--text">更新</span>
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -196,12 +196,12 @@
             search: "",
             selected: [],
             headers: [
-                { text: 'Username', value: 'username' },
-                { text: 'Nick', value: 'nick' },
-                { text: 'email', value: 'email' },
-                { text: 'Role', value: 'role' },
-                { text: 'Create Date', value: 'date' },
-                { text: 'Action', value: 'action' },
+                { text: '用户名', value: 'username' },
+                { text: '昵称', value: 'nick' },
+                { text: '邮箱', value: 'email' },
+                { text: '角色', value: 'role' },
+                { text: '添加日期', value: 'date' },
+                { text: '操作', value: 'action' },
             ],
             newUserData: {
                 username: "",

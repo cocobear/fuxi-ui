@@ -1,7 +1,7 @@
 <template>
     <div>
         <span class="subtitle-1 ml-1" v-if="value.length < 2">
-        No Memory information
+        没有内存信息
     </span>
         <v-sheet>
             <v-sparkline

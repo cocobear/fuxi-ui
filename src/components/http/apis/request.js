@@ -30,7 +30,7 @@ request.interceptors.request.use(
 request.interceptors.response.use((response) => {
     if (response.data['status']['code'] === 10401) {
         window.localStorage.removeItem('access_token');
-        message.error('The token used in the request has expired.');
+        message.error('TOKEN已过期');
         router.push({path: '/login'}).then(r => {window.console.log(r)});
     }
     return response;
@@ -39,15 +39,15 @@ request.interceptors.response.use((response) => {
         let status_code = error.response.status;
         if (status_code === 401) {
             window.localStorage.removeItem('access_token');
-            message.error('The token used in the request has expired');
+            message.error('TOKEN已过期');
             router.push({path: '/login'}).then(r => {window.console.log(r)});
         } else if (status_code === 500) {
-            message.error('Internal Server Error');
+            message.error('服务器出错');
         } else {
-            message.error('Unknown error');
+            message.error('未知错误');
         }
     } else {
-        message.error('Network issue. Please check your internet connection');
+        message.error('网络问题. 请检查你的网络连接');
     }
     return Promise.reject(error.response.data)
 });

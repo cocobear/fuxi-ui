@@ -7,26 +7,26 @@
                         <br><br><br><br>
                         <v-card class="elevation-12 mt-lg-12">
                             <v-toolbar color="teal" dark flat>
-                                <v-toolbar-title>SIGN IN</v-toolbar-title>
+                                <v-toolbar-title>登录</v-toolbar-title>
                                 <v-spacer />
                             </v-toolbar>
                             <v-card-text @keydown.enter=login>
                                 <v-form >
                                     <v-text-field
-                                            label="Login"
+                                            label="用户名"
                                             name="login"
                                             color="teal"
-                                            :rules="[v => !!v || 'Username is required']"
+                                            :rules="[v => !!v || '用户名必填']"
                                             prepend-icon="mdi-account"
                                             type="text"
                                             v-model="username"
                                     />
                                     <v-text-field
-                                            label="Password"
+                                            label="密码"
                                             name="password"
                                             color="teal"
                                             prepend-icon="mdi-lock"
-                                            :rules="[v => !!v || 'Password is required']"
+                                            :rules="[v => !!v || '密码必填']"
                                             type="password"
                                             v-model="password"
                                     />
@@ -38,7 +38,7 @@
                                         color="teal"
                                         class="mr-2 mb-3"
                                         @click="login"
-                                ><span class="white--text">Login</span></v-btn>
+                                ><span class="white--text">登录</span></v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
@@ -60,11 +60,11 @@
         methods: {
             login() {
                 if (this.username.length === 0) {
-                    this.$message.error("Please enter your username");
+                    this.$message.error("请输入用户名");
                     return
                 }
                 if (this.password.length === 0) {
-                    this.$message.error("Please enter your password");
+                    this.$message.error("请输入密码");
                     return
                 }
                 this.$api.auth.getToken(this.username, this.password).then(res => {
@@ -77,7 +77,7 @@
                             this.$api.TOKEN = result;
                             this.$router.push('/');
                         } else {
-                            this.$message.error("set token failed")
+                            this.$message.error("设置TOKEN失败")
                         }
                     } else {
                         this.password = "";

@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>SETTINGS</span>
+                    <span>设置</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -15,10 +15,10 @@
             <v-col cols="12">
                 <v-tabs v-model="tab">
                     <v-tab key="account">
-                        Account
+                        账号
                     </v-tab>
                     <v-tab key="tools">
-                        Tools
+                        工具
                     </v-tab>
                 </v-tabs>
 

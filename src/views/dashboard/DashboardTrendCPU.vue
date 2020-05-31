@@ -1,7 +1,7 @@
 <template>
     <div>
         <span class="subtitle-1 ml-1" v-if="value.length < 2">
-        No CPU information
+        没有CPU信息
     </span>
         <v-sheet>
             <v-sparkline
