@@ -195,7 +195,7 @@
                 { text: '插件名称', value: 'name' },
                 { text: '类型', value: 'type' },
                 { text: '应用', value: 'app' },
-                { text: '日期', value: 'date' },
+                { text: '时间', value: 'date' },
                 { text: '操作人', value: 'op' },
                 { text: '动作', value: 'action' },
             ],

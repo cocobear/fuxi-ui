@@ -16,7 +16,7 @@
             </v-col>
             <v-col cols="6">
                 <span v-if="!nmapExe" class="error--text ml-2">
-                    ** The nmap was not found, you need to configure it
+                    ** Nmap未安装
                     <a href="/#/settings" class="ml-2">Go to</a>
                 </span>
                 <v-col>

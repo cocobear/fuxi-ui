@@ -225,7 +225,7 @@
                 { text: '主机名', value: 'hostname' },
                 { text: 'IP', value: 'host' },
                 { text: '端口', value: 'port_str' },
-                { text: '日期', value: 'date' },
+                { text: '时间', value: 'date' },
                 { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,
