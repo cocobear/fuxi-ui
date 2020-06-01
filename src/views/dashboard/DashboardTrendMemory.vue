@@ -11,6 +11,7 @@
                     :padding="padding"
                     :line-width="width"
                     height="35"
+                    label-size=3
                     :stroke-linecap="lineCap"
                     :gradient-direction="gradientDirection"
                     :fill="fill"

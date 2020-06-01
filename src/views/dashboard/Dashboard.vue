@@ -77,16 +77,6 @@
                                     <td>{{ item.op }}</td>
                                     <td>{{ item.date }}</td>
                                     <td>{{ item['elapsed_time'] }}</td>
-                                    <td>
-                                        <v-tooltip bottom>
-                                            <template v-slot:activator="{ on }">
-                                                <v-btn v-on="on" @click="taskStop(item['celery_id'], item['table'], item['tid'])" color="error" icon>
-                                                    <v-icon>mdi-stop-circle-outline</v-icon>
-                                                </v-btn>
-                                            </template>
-                                            <span>STOP</span>
-                                        </v-tooltip>
-                                    </td>
                                 </tr>
                                 </tbody>
                             </template>

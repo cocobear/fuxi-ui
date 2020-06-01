@@ -1,5 +1,7 @@
 export default function () {
     return [
+        { header: true,text: '首页 ', path: '/dashboard' },
+
         { header: true, text: "信息收集" },
         { group: true, text: "端口", icon: 'mdi-map-marker-path', items: [
                 { text: "新建扫描", path: "/discovery/port/new" },{ text: "任务管理", path: "/discovery/port/tasks" },

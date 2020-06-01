@@ -3,7 +3,7 @@
         <v-list dense class="white lighten-4" width="230" >
             <template v-for="(item, i) in items">
                 <v-row v-if="item.header" :key="i" align="center">
-                    <v-col cols="6">
+                    <v-col cols="6" @click="goToPath(item.path)" >
                         <v-subheader>
                             <h3 >{{ item.text }}</h3>
                         </v-subheader>
