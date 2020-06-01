@@ -209,7 +209,7 @@
                 { text: '漏洞数量', value: 'vul_count' },
                 { text: '开始时间', value: 'date' },
                 { text: '结束时间', value: 'end_date' },
-                { text: '操作人', value: 'op' },
+                { text: '用户', value: 'op' },
                 { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,

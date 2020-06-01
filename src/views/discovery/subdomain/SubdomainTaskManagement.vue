@@ -242,7 +242,7 @@
                                 <td><strong class="teal--text">子域名</strong></td>
                                 <td><span class="ml-8">{{taskDetail.count}}</span></td>
                             </tr><tr>
-                                <td><strong class="teal--text">操作人</strong></td>
+                                <td><strong class="teal--text">用户</strong></td>
                                 <td><span class="ml-8">{{taskDetail.op}}</span></td>
                             </tr><tr>
                                 <td><strong class="teal--text">暴力</strong></td>
@@ -286,7 +286,7 @@
                 { text: '网站信息', value: 'info' },
                 { text: '开始时间', value: 'date' },
                 { text: '结束时间', value: 'end_date' },
-                { text: '操作人', value: 'op' },
+                { text: '用户', value: 'op' },
                 { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,

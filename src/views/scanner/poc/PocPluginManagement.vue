@@ -196,7 +196,7 @@
                 { text: '类型', value: 'type' },
                 { text: '应用', value: 'app' },
                 { text: '时间', value: 'date' },
-                { text: '操作人', value: 'op' },
+                { text: '用户', value: 'op' },
                 { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,

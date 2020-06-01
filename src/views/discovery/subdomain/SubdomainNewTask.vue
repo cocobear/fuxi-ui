@@ -37,10 +37,10 @@
                 </v-col>
                 <v-row cols="12">
                     <v-col cols="3" class="mt-n8 ml-3">
-                        <v-checkbox v-model="newTaskData.brute" label="暴力"></v-checkbox>
+                        <v-checkbox v-model="newTaskData.brute" label="暴力猜测"></v-checkbox>
                     </v-col>
                     <v-col cols="3" class="mt-n8">
-                        <v-checkbox v-model="newTaskData.info" label="网站信息"></v-checkbox>
+                        <v-checkbox v-model="newTaskData.info" label="Web信息"></v-checkbox>
                     </v-col>
                 </v-row>
 

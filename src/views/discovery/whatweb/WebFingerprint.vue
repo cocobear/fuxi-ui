@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>网站指纹</span>
+                    <span>Web指纹</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -32,7 +32,7 @@
             </v-col>
             <v-col cols="2">
                 <v-btn @click="openAdScanDialog" class="mt-3" color="teal" elevation="0">
-                    <span class="white--text">高级扫描</span>
+                    <span class="white--text">高级选项</span>
                 </v-btn>
             </v-col>
             <v-col cols="4">
@@ -165,7 +165,7 @@
         <v-dialog v-model="advancedTaskDialogOpen" width="500px">
             <v-card>
                 <v-card-title>
-                    <span class="headline ml-3 teal--text">高级扫描</span>
+                    <span class="headline ml-3 teal--text">高级选项</span>
                 </v-card-title>
                 <v-card-text>
                     <v-row>
@@ -291,9 +291,9 @@
             scanTestData: {url: "", result: []},
             targetExampleText: "Example: \nhttps://www.example.com\n192.168.1.1\n192.168.1.1/24\n192.168.100-200\n",
             adScanLevel: [
-                {text: "Stealthy", value: 1},
-                {text: "Aggressive", value: 3},
-                {text: "Heavy", value: 4},
+                {text: "隐蔽扫描", value: 1},
+                {text: "普通扫描", value: 3},
+                {text: "深度扫描", value: 4},
             ],
             adScanOPT: {
                 name: "", target: "", level: 3, header: "", cookies: "", threads: 15,

@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>端口扫描管理</span>
+                    <span>任务管理</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -226,7 +226,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><strong class="teal--text">操作人</strong></td>
+                                <td><strong class="teal--text">用户</strong></td>
                                 <td><span class="ml-8">{{taskDetail.op}}</span></td>
                             </tr>
                             <tr>
@@ -285,7 +285,7 @@
                 { text: '在线', value: 'online' },
                 { text: '开始时间', value: 'date' },
                 { text: '结束时间', value: 'end_date' },
-                { text: '操作人', value: 'op' },
+                { text: '用户', value: 'op' },
                 { text: '动作', value: 'action' },
             ],
             deleteMultiDialog: false,

@@ -51,13 +51,12 @@
                             <template v-slot:default>
                                 <thead>
                                 <tr>
-                                    <th class="text-left">Module</th>
+                                    <th class="text-left">任务类型</th>
                                     <th class="text-left">任务名称</th>
                                     <th class="text-left">状态</th>
-                                    <th class="text-left">操作人</th>
+                                    <th class="text-left">用户</th>
                                     <th class="text-left">开始时间</th>
-                                    <th class="text-left">Elapsed Time</th>
-                                    <th class="text-left">Action</th>
+                                    <th class="text-left">运行时间</th>
                                 </tr>
                                 </thead>
                                 <tbody>
