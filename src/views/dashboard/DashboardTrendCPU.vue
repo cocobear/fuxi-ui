@@ -10,7 +10,7 @@
                     :smooth="radius || false"
                     :padding="padding"
                     :line-width="width"
-                    height="28"
+                    height="25"
                     label-size=3
                     :stroke-linecap="lineCap"
                     :gradient-direction="gradientDirection"
@@ -46,7 +46,7 @@
             padding: 8,
             lineCap: 'round',
             gradient: gradients[5],
-            value: [],
+            value: [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0],
             gradientDirection: 'top',
             gradients,
             fill: false,

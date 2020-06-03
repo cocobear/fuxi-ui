@@ -10,7 +10,7 @@
                     :smooth="radius || false"
                     :padding="padding"
                     :line-width="width"
-                    height="35"
+                    height="25"
                     label-size=3
                     :stroke-linecap="lineCap"
                     :gradient-direction="gradientDirection"
@@ -42,10 +42,10 @@
         data: () => ({
             width: 1,
             radius: 10,
-            padding: 8,
+            padding: 2,
             lineCap: 'round',
             gradient: gradients[5],
-            value: [],
+            value: [2, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38],
             gradientDirection: 'top',
             gradients,
             fill: false,

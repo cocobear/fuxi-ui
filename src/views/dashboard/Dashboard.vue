@@ -84,13 +84,13 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col cols="12" class="mb-2">
-                <v-card class="mx-auto"  max-height="120">
-                    <v-card-title>
+            <v-col cols="12" class="mb-1" >
+                <v-card class="mb-1" style=" height:220px">
+                    <v-card-title class="mb-1" style="height:10px" >
                         <v-list-item-action>
                             <v-icon class="teal--text">mdi-cpu-64-bit</v-icon>
                         </v-list-item-action>
-                        <v-list-item-content class="ml-n3">
+                        <v-list-item-content class="ml-n1">
                             <v-list-item-title class="teal--text">
                                 <span>CPU</span>
                             </v-list-item-title>
@@ -100,12 +100,12 @@
                         <DashboardTrendCPU/>
                     </v-card-text>
                 </v-card>
-                <v-card max-height="120" class="mt-2">
-                    <v-card-title>
+                <v-card class="mb-1" style=" height:220px">
+                    <v-card-title class="mb-1" style=" height:10px" >
                         <v-list-item-action>
                             <v-icon class="teal--text">mdi-memory</v-icon>
                         </v-list-item-action>
-                        <v-list-item-content class="ml-n3">
+                        <v-list-item-content class="ml-n1">
                             <v-list-item-title class="teal--text">
                                 <span>内存</span>
                             </v-list-item-title>
