@@ -226,7 +226,7 @@
                 { text: 'IP', value: 'host' },
                 { text: '端口', value: 'port_str' },
                 { text: '时间', value: 'date' },
-                { text: '动作', value: 'action' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             hostDetailDialogOpen: false,

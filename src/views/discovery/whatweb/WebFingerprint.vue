@@ -80,6 +80,11 @@
                         required
                 ></v-text-field>
             </v-col>
+            <v-col cols="2">
+                <v-btn @click="openAdScanDialog" class="mt-3" color="teal" elevation="0">
+                    <span class="white--text">搜索</span>
+                </v-btn>
+            </v-col>
         </v-row>
         <v-row>
             <v-col cols="2" class="mt-n6">

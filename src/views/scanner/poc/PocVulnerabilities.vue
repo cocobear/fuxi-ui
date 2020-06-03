@@ -203,7 +203,7 @@
                 { text: '应用', value: 'app' },
                 { text: '时间', value: 'date' },
                 { text: '用户', value: 'op' },
-                { text: '动作', value: 'action' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             vulDialogOpen: false,

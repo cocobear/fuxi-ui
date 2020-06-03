@@ -223,7 +223,7 @@
                 { text: '参数', value: 'parameter' },
                 { text: 'DBMS', value: 'dbms' },
                 { text: '时间', value: 'date' },
-                { text: '动作', value: 'action' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
             vulDialogOpen: false,

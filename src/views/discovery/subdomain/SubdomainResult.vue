@@ -174,7 +174,7 @@
                 { text: 'IP', value: 'ip' },
                 { text: '响应', value: 'response' },
                 // { text: '时间', value: 'date' },
-                { text: '动作', value: 'action' },
+                { text: '操作', value: 'action' },
             ],
             deleteMultiDialog: false,
         }),
