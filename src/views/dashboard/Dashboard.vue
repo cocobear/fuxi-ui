@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n3">
                 <v-list-item-title class="teal--text">
-                    <span>面板</span>
+                    <span>安全总览</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
@@ -84,8 +84,8 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col cols="12" class="mb-6">
-                <v-card>
+            <v-col cols="12" class="mb-2">
+                <v-card class="mx-auto"  max-height="120">
                     <v-card-title>
                         <v-list-item-action>
                             <v-icon class="teal--text">mdi-cpu-64-bit</v-icon>
@@ -100,7 +100,7 @@
                         <DashboardTrendCPU/>
                     </v-card-text>
                 </v-card>
-                <v-card class="mt-6">
+                <v-card max-height="120" class="mt-2">
                     <v-card-title>
                         <v-list-item-action>
                             <v-icon class="teal--text">mdi-memory</v-icon>

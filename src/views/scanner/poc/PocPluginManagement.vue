@@ -50,7 +50,7 @@
                 >
                     <template v-slot:activator="{ on }">
                         <v-btn elevation="0" v-on="on"  class="ml-4 mr-4">
-                            <span>New Plugin</span>
+                            <span>添加插件</span>
                         </v-btn>
                     </template>
                     <v-card>

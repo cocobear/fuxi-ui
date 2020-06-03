@@ -1,6 +1,6 @@
 export default function () {
     return [
-        { header: true,text: '首页 ', path: '/dashboard' },
+        { dc: true, text: '安全总览 ',icon: 'mdi-map-marker-path', path: '/dashboard' },
 
         { header: true, text: "信息收集" },
         { group: true, text: "端口扫描", icon: 'mdi-map-marker-path', items: [

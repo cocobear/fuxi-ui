@@ -10,7 +10,7 @@
                     :smooth="radius || false"
                     :padding="padding"
                     :line-width="width"
-                    height="35"
+                    height="28"
                     label-size=3
                     :stroke-linecap="lineCap"
                     :gradient-direction="gradientDirection"
