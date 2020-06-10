@@ -1,32 +1,32 @@
 <template>
-    <v-app-bar class="white" app clipped-left elevation="2" height="75">
-        <v-list-item-avatar @click="goToPath('/')" tile size="80" class="ml-4 mr-4">
-            <img src="@/assets/images/fuxi_v3.svg" alt="logo"/>
+    <v-app-bar dark="true" app clipped-left elevation="2" color="#002140" height="80">
+        <v-list-item-avatar @click="goToPath('/')" tile size="70" class="ml-4 mr-4">
+            <img src="@/assets/images/logo.png" height="40" alt="logo"/>
         </v-list-item-avatar>
-        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">安全测试平台</span>
+        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">奇云漏洞测试平台</span>
         <v-spacer />
         <div>
             <div >
                 <v-btn class="mr-4" icon @click="goToPath('/scanner/poc/new')">
-                    <v-icon>mdi-credit-card-scan-outline</v-icon>
+                    <v-icon color="blue darken-2">mdi-credit-card-scan-outline</v-icon>
                 </v-btn>
                 <v-btn class="mr-4" icon @click="goToPath('/discovery/port/new')">
-                    <v-icon>mdi-map-marker-path</v-icon>
+                    <v-icon color="blue darken-2">mdi-map-marker-path</v-icon>
                 </v-btn>
                 <v-btn class="mr-4" icon @click="goToPath('/scanner/sqlmap/tasks?task=new')">
-                    <v-icon>mdi-needle</v-icon>
+                    <v-icon color="blue darken-2">mdi-needle</v-icon>
                 </v-btn>
                 <v-btn class="mr-4" icon @click="goToPath('/discovery/subdomain/new')">
-                    <v-icon>mdi-web-box</v-icon>
+                    <v-icon color="blue darken-2">mdi-web-box</v-icon>
                 </v-btn>
                 <v-btn class="mr-4" icon @click="goToPath('/discovery/whatweb')">
-                    <v-icon>mdi-fingerprint</v-icon>
+                    <v-icon color="blue darken-2">mdi-fingerprint</v-icon>
                 </v-btn>
                 <v-btn class="mr-4" icon @click="goToPath('/exploit/xss/tasks')">
-                    <v-icon>mdi-anchor</v-icon>
+                    <v-icon color="blue darken-2">mdi-anchor</v-icon>
                 </v-btn>
                 <v-btn class="mr-12" icon @click="goToPath('/exploit/http/result')">
-                    <v-icon>mdi-spider-web</v-icon>
+                    <v-icon color="blue darken-2">mdi-spider-web</v-icon>
                 </v-btn>
 
 <!--                <v-tooltip bottom>-->
@@ -39,7 +39,7 @@
                 <v-menu>
                     <template v-slot:activator="{ on }">
                         <v-btn icon class="mr-1" v-on="on">
-                            <v-icon>mdi-cog-transfer-outline</v-icon>
+                            <v-icon color="blue darken-2">mdi-cog-transfer-outline</v-icon>
                         </v-btn>
                     </template>
                     <v-list>
@@ -58,7 +58,7 @@
 
                         <v-list-item @click="goToPath('/settings')">
                             <v-list-item-action>
-                                <v-icon>mdi-cog-outline</v-icon>
+                                <v-icon color="blue darken-2">mdi-cog-outline</v-icon>
                             </v-list-item-action>
                             <v-list-item-content>
                                 <v-list-item-title>

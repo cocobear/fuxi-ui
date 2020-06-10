@@ -29,11 +29,12 @@
                     ></v-text-field>
                 </v-col>
 
-                <v-col cols="6" class="mt-n8">
+                <v-col cols="6" class="mt-n8" style="font-size:12px;">
                     <v-combobox
                             v-model="newTaskData.portType"
                             :items="['默认', '自定义', '全部']"
                             label="端口"
+                            
                     ></v-combobox>
                 </v-col>
 
@@ -169,7 +170,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
