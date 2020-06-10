@@ -139,10 +139,10 @@
                         <div v-for="(item, index) in scanTestData.result" :key="index" class="mr-4 ml-2">
                             <div>
                                 <strong class="mr-4 title">[{{item['http_status']}}]</strong>
-                                <strong class="title">{{item['domain']}}</strong>
+                                <a class="title">{{item['domain']}}</a>
                                 <br>
                                 <span class="title" v-if="item.title.length !== 0">## {{item['title'] | long}}</span>
-                                <span class="teal--text title" v-else>## Title Not Found</span>
+                                <span class="teal--text title" v-else>## 未找到标题</span>
                                 <br>
                                 <span v-if="item['c_code'] !== 'zz'" :class="'mr-2 flag-icon flag-icon-'+item['c_code']"/>
                                 <span v-else class="mr-2 flag-icon flag-icon-us"/>
@@ -210,8 +210,8 @@
                             />
                         </v-col>
                         <v-col v-if="adScanOPT.level === 4" cols="12" class="mt-n11 mr-3 ml-3 mb-4">
-                            <span class="error--text">## Makes a lot of HTTP requests per target. URLs from all plugins are attempted.</span>
-                            <span class="error--text">This level is recommended for a single target because it takes a lot of time</span>
+                            <span class="error--text">## 一个目标会进行大量的HTTP连接， 所有的插件都会尝试.</span>
+                            <span class="error--text">## 这个级别建议只扫描一个目标，因为需要花费很长时间</span>
                         </v-col>
 
                         <v-col cols="12" class="mt-n10">
