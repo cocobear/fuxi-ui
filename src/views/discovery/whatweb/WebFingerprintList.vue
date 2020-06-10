@@ -4,10 +4,10 @@
             <div>
                 <div class="mt-2">
                     <span class="teal--text title" v-if="item.title.length !== 0">## {{item['title']}}</span>
-                    <span class="teal--text title" v-else>## Title Not Found</span>
+                    <span class="teal--text title" v-else>## 没有标题</span>
                 </div>
                 <div>
-                    <span>{{item['domain']}}</span>
+                    <a :href="item['domain']">{{item['domain']}}</a>
                 </div>
                 <div class="mt-1">
                     <span v-if="item['c_code'] !== 'zz'" :class="'mr-2 flag-icon flag-icon-'+item['c_code']"/>

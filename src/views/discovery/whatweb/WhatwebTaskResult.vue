@@ -6,7 +6,7 @@
             </v-list-item-action>
             <v-list-item-content class="ml-n4">
                 <v-list-item-title class="teal--text">
-                    <span>TASK RESULT</span>
+                    <span>任务结果</span>
                 </v-list-item-title>
             </v-list-item-content>
         </v-card-title>
