@@ -1,6 +1,6 @@
 #!/bin/bash
 npm run build
-rm -f dist/img/*
+rm -f dist/img/*.svg
 cp -r dist /Users/cocobear/code/fuxi/opt/fuxi
 scp -r dist root@fuxi:/tmp
 ssh root@fuxi   << remotessh

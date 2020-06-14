@@ -338,7 +338,7 @@
             deleteSelectedTask(selected) {
                 let tids = [];
                 for (let i=0; i<selected.length; i++) {
-                    tids.push(selected[i]['hid'])
+                    tids.push(selected[i]['tid'])
                 }
                 this.deleteMultiDialog = false
                 this.deleteTask(tids.join(","));

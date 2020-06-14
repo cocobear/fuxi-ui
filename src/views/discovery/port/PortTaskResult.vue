@@ -252,6 +252,9 @@
                         this.$message.error(status['message']);
                     }
                 })
+//                 let a = {"status": {"status": "success", "code": 10200, "message": ""}, "result": [{"hid": "5ed27dc036bb97dd2d32811c", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.12", "hostname": "-", "port": [8080], "port_str": "8080", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d32811d", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.14", "hostname": "-", "port": [80, 443], "port_str": "80,443", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d32811e", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.15", "hostname": "-", "port": [80, 1723, 6000, 8081], "port_str": "80,1723,6000,8081", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328120", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.30", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328121", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.40", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328122", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.41", "hostname": "-", "port": [80, 5001, 5002, 5003, 5004, 49154, 49165], "port_str": "80,5001,5002,5003,5004,49154,49165", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328123", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.42", "hostname": "-", "port": [80, 443, 30000], "port_str": "80,443,30000", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328124", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.46", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328125", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.5", "hostname": "-", "port": [21], "port_str": "21", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328126", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.54", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328127", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.55", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328128", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.56", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d328129", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.57", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d32812a", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.60", "hostname": "-", "port": [80, 443], "port_str": "80,443", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d32812b", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.65", "hostname": "-", "port": [], "port_str": "-", "date": "2020-05-30 15:37:36"}, {"hid": "5ed27dc036bb97dd2d32812c", "tid": "5ed27ce0ecc711e64e821ebd", "name": "\u897f\u519c\u7aef\u53e3\u626b\u63cf\u6d4b\u8bd5", "host": "61.150.47.8", "hostname": "-", "port": [53], "port_str": "53", "date": "2020-05-30 15:37:36"}], "timestamp": 1592124658}
+// ;               
+//                 this.items = a['result'];
             },
             deleteHost(hid) {
                 this.$api.discovery.portHostDelete(hid).then(res => {
@@ -264,6 +267,8 @@
                     }
                     this.getData(this.tid);
                 })
+
+
             },
             deleteSelectedHost(selected) {
                 let hids = [];
@@ -289,16 +294,16 @@
             },
             sendTargetToPocScanner(){
                 let target = [];
-                for (let i=0; i<this.items.length; i++) {
-                    target.push(this.items[i]['host'])
+                for (let i=0; i<this.selected.length; i++) {
+                    target.push(this.selected[i]['host'])
                 }
                 window.open("#/scanner/poc/new?target=" + target.join(","), "_bank")
             },
             sendTargetToWhatweb(){
                 let target = [];
-                for (let i=0; i<this.items.length; i++) {
-                    for (let c=0; c<this.items[i]['port'].length; c++) {
-                        target.push(this.items[i]['host'] + ":" + this.items[i]['port'][c].toString())
+                for (let i=0; i<this.selected.length; i++) {
+                    for (let c=0; c<this.selected[i]['port'].length; c++) {
+                        target.push(this.selected[i]['host'] + ":" + this.selected[i]['port'][c].toString())
                     }
                 }
                 window.open("#/discovery/whatweb?target=" + target.join(","), "_bank")
