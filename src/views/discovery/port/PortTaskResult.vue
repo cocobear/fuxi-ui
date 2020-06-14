@@ -35,6 +35,7 @@
                             </v-btn>
                             <v-btn
                                     color="primary darken-1"
+                                    @click="deleteSelectedHost(selected)"
                                     text>
                                 确认
                             </v-btn>
@@ -263,6 +264,15 @@
                     }
                     this.getData(this.tid);
                 })
+            },
+            deleteSelectedHost(selected) {
+                let hids = [];
+                for (let i=0; i<selected.length; i++) {
+                    hids.push(selected[i]['hid'])
+                }
+                this.deleteMultiDialog = false
+                this.deleteHost(hids.join(","));
+
             },
             hostDetail(hid) {
                 this.$api.discovery.portHostDetail(hid).then(res => {

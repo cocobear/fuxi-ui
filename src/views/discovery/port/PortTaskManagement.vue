@@ -35,6 +35,8 @@
                             </v-btn>
                             <v-btn
                                     color="primary darken-1"
+                                    @click="deleteSelectedTask(selected)"
+
                                     text>
                                 确认
                             </v-btn>
@@ -332,6 +334,14 @@
                     }
                     this.getData();
                 })
+            },
+            deleteSelectedTask(selected) {
+                let tids = [];
+                for (let i=0; i<selected.length; i++) {
+                    tids.push(selected[i]['hid'])
+                }
+                this.deleteMultiDialog = false
+                this.deleteTask(tids.join(","));
             },
             rescanTask(tid) {
                 this.$api.discovery.portTaskRescan(tid).then(res => {
