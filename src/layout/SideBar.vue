@@ -58,6 +58,7 @@
 
 <script>
     import sidebarItems from "../sidebar"
+    import sidebarItemsAdmin from "../sidebar_admin"
     export default {
         name: "SideBar",
         data: () => ({
@@ -77,7 +78,13 @@
                 this.path = path;
                 this.$router.push(path);
             },
-        }
+
+        },
+        mounted() {
+            if (localStorage.getItem('role') === 'admin') {
+                this.items = sidebarItemsAdmin();
+            }
+        },
     }
 </script>
 

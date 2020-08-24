@@ -7,7 +7,7 @@
                         <br><br><br><br>
                         <v-card class="elevation-12 mt-lg-12">
                             <v-toolbar color="teal" dark flat>
-                                <v-toolbar-title>登录</v-toolbar-title>
+                                <v-toolbar-title>电科院漏洞测试平台</v-toolbar-title>
                                 <v-spacer />
                             </v-toolbar>
                             <v-card-text @keydown.enter=login>
@@ -72,6 +72,7 @@
                     let status = response['status'];
                     let result = response['result'];
                     if(status['status'] === "success") {
+                        localStorage.setItem('role', this.username);
                         localStorage.setItem('access_token', result);
                         if (localStorage.getItem('access_token')) {
                             this.$api.TOKEN = result;
@@ -88,3 +89,8 @@
         }
     }
 </script>
+<style scoped>
+.v-toolbar__title {
+    margin-left: 30%;
+}
+</style>

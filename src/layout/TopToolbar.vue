@@ -3,7 +3,7 @@
         <v-list-item-avatar @click="goToPath('/')" tile size="70" class="ml-4 mr-4">
             <img src="@/assets/images/logo.png" height="40" alt="logo"/>
         </v-list-item-avatar>
-        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">奇云漏洞测试平台</span>
+        <span @click="goToPath('/')" class="ml-4 headline	grey--text font-weight-medium	">电科院漏洞测试平台</span>
         <v-spacer />
         <div>
             <div >

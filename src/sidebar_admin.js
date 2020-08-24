@@ -18,7 +18,7 @@ export default function () {
         { header: true, text: "漏洞扫描" },
         { group: true, text: "PoC扫描", icon: 'mdi-credit-card-scan-outline', items: [
                 { text: "新建扫描", path: "/scanner/poc/new" },{ text: "任务管理", path: "/scanner/poc/tasks" },
-                { text: "漏洞管理", path: "/scanner/poc/vul" },
+                { text: "插件管理", path: "/scanner/poc/plugin" },{ text: "漏洞管理", path: "/scanner/poc/vul" },
             ]
         },
         { dc: true, icon: 'mdi-needle', text: 'SQL注入', path: '/scanner/sqlmap/tasks' },
